@@ -82,9 +82,11 @@ app.delete('/api/orders/:id', (req, res) => {
   writeOrders(next);
   res.json({ ok: true });
 });
+
+// Serve the shop website from the same Render service.
 app.get('/', (req, res) => {
-  res.send('DEWKUYBIG Backend ทำงานปกติ ✅');
-});     
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
