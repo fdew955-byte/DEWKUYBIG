@@ -82,6 +82,9 @@ app.delete('/api/orders/:id', (req, res) => {
   writeOrders(next);
   res.json({ ok: true });
 });
+app.get('/', (req, res) => {
+  res.send('DEWKUYBIG Backend ทำงานปกติ ✅');
+});     
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
